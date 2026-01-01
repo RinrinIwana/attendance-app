@@ -1,0 +1,789 @@
+/* ===== Base ===== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #111;
+    background: #f3f3f3;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+/* ===== Layout ===== */
+.l-body {}
+
+.l-main {
+    min-height: calc(100vh - 64px);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 40px 16px;
+}
+
+/* ===== Header (BEM) ===== */
+.header {
+    background: #000;
+    height: 64px;
+    display: flex;
+    align-items: center;
+}
+
+.header__inner {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header__logo {
+    height: 28px;
+    width: auto;
+    display: block;
+}
+
+.header__brand-text {
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: .5px;
+}
+
+.header__nav {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.header__nav-link {
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.header__nav-link--button {
+    background: transparent;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+.header__logout {
+    margin: 0;
+}
+
+/* ===== Button (BEM) ===== */
+.btn {
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn--primary {
+    background: #000;
+    color: #fff;
+}
+
+.btn--wide {
+    width: 160px;
+    height: 48px;
+}
+
+/* ===== Attendance (BEM) ===== */
+.attendance {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.attendance__inner {
+    width: 100%;
+    max-width: 680px;
+    text-align: center;
+    padding-top: 60px;
+}
+
+.attendance__badge {
+    display: inline-block;
+    padding: 6px 18px;
+    border-radius: 999px;
+    background: #d9d9d9;
+    color: #333;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.attendance__date {
+    margin-top: 18px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.attendance__time {
+    margin-top: 14px;
+    font-size: 56px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.attendance__actions {
+    margin-top: 28px;
+    display: flex;
+    justify-content: center;
+}
+
+.attendance__done {
+    margin-top: 8px;
+    color: #333;
+    font-weight: 700;
+}
+
+/* ===== Page title (BEM) ===== */
+.page-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 18px;
+}
+
+.page-title__bar {
+    width: 4px;
+    height: 24px;
+    background: #000;
+    display: inline-block;
+}
+
+.page-title__text {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+/* ===== Attendance List Layout (BEM) ===== */
+.attendance-list {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.attendance-list__inner {
+    width: 100%;
+    max-width: 720px;
+}
+
+/* ===== Month nav (BEM) ===== */
+.month-nav {
+    background: #fff;
+    border-radius: 10px;
+    padding: 12px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0 18px;
+}
+
+.month-nav__link {
+    font-size: 12px;
+    font-weight: 700;
+    color: #666;
+}
+
+.month-nav__center {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 800;
+}
+
+.month-nav__icon {
+    font-size: 14px;
+}
+
+.month-nav__ym {
+    font-size: 14px;
+}
+
+/* ===== Attendance table (BEM) ===== */
+.attendance-table {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.attendance-table__table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.attendance-table__thead {
+    background: #f7f7f7;
+}
+
+.attendance-table__th,
+.attendance-table__td {
+    padding: 12px 14px;
+    border-bottom: 1px solid #e6e6e6;
+    text-align: center;
+    font-size: 12px;
+    color: #333;
+}
+
+.attendance-table__th {
+    font-weight: 800;
+}
+
+.attendance-table__tr:last-child .attendance-table__td {
+    border-bottom: 0;
+}
+
+.attendance-table__detail {
+    font-weight: 800;
+    color: #000;
+}
+
+.attendance-table__empty {
+    padding: 18px;
+    text-align: center;
+    font-weight: 700;
+    color: #666;
+}
+
+/* ===== Attendance Detail (BEM) ===== */
+.attendance-detail {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.attendance-detail__inner {
+    width: 100%;
+    max-width: 760px;
+}
+
+.attendance-detail__card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 16px;
+}
+
+.attendance-detail__table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.attendance-detail__tr {}
+
+.attendance-detail__th,
+.attendance-detail__td {
+    border-bottom: 1px solid #e6e6e6;
+    padding: 18px 16px;
+    font-size: 12px;
+}
+
+.attendance-detail__th {
+    width: 180px;
+    color: #666;
+    font-weight: 700;
+    text-align: left;
+}
+
+.attendance-detail__td {
+    color: #111;
+    font-weight: 700;
+}
+
+.attendance-detail__td--center {
+    text-align: center;
+}
+
+.attendance-detail__range {
+    display: inline-block;
+    font-weight: 800;
+}
+
+.attendance-detail__input {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 62px;
+    height: 22px;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background: #fff;
+    font-weight: 700;
+}
+
+.attendance-detail__textarea {
+    width: 180px;
+    min-height: 54px;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    padding: 10px;
+    font-weight: 700;
+}
+
+.attendance-detail__actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 18px;
+}
+
+.attendance-detail__submit {
+    width: 120px;
+    height: 42px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.attendance-detail__note {
+    margin: 0;
+    font-weight: 700;
+}
+
+.attendance-detail__note--error {
+    color: #c00;
+}
+
+/* ===== Request Create (BEM) ===== */
+.request-create {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.request-create__inner {
+    width: 100%;
+    max-width: 760px;
+}
+
+.request-create__message {
+    margin-top: 14px;
+}
+
+.request-create__error-list {
+    margin: 0;
+    padding-left: 18px;
+}
+
+.request-create__error-item {
+    margin: 4px 0;
+}
+
+.request-create__card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 16px;
+}
+
+.request-create__table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.request-create__th,
+.request-create__td {
+    border-bottom: 1px solid #e6e6e6;
+    padding: 18px 16px;
+    font-size: 12px;
+}
+
+.request-create__th {
+    width: 180px;
+    color: #666;
+    font-weight: 700;
+    text-align: left;
+}
+
+.request-create__td {
+    font-weight: 700;
+}
+
+.request-create__form {
+    margin: 0;
+}
+
+.request-create__time-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.request-create__time {
+    width: 110px;
+    height: 30px;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    padding: 0 10px;
+    background: #fff;
+}
+
+.request-create__range {
+    font-weight: 800;
+}
+
+.request-create__hint {
+    margin-top: 10px;
+    color: #777;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.request-create__reason {
+    margin-top: 14px;
+}
+
+.request-create__label {
+    display: block;
+    margin-bottom: 8px;
+    color: #666;
+    font-weight: 800;
+}
+
+.request-create__textarea {
+    width: 260px;
+    min-height: 80px;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    padding: 10px;
+    resize: vertical;
+}
+
+.request-create__actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 16px;
+}
+
+.request-create__submit {
+    width: 120px;
+    height: 42px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.request-create__footer {
+    margin-top: 12px;
+}
+
+.request-create__back {
+    font-weight: 700;
+    color: #333;
+}
+
+/* ===== Request List (BEM) ===== */
+.request-list {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.request-list__inner {
+    width: 100%;
+    max-width: 760px;
+}
+
+/* ===== Tabs (BEM) ===== */
+.request-tabs {
+    margin-top: 12px;
+}
+
+.request-tabs__inner {
+    display: flex;
+    gap: 40px;
+    padding-left: 120px;
+    /* 画像の位置感に寄せる（必要なら微調整） */
+}
+
+.request-tabs__tab {
+    display: inline-block;
+    padding: 10px 0;
+    font-size: 13px;
+    font-weight: 800;
+    color: #666;
+}
+
+.request-tabs__tab--active {
+    color: #000;
+}
+
+.request-tabs__line {
+    margin-top: 10px;
+    height: 1px;
+    background: #333;
+    opacity: 0.5;
+}
+
+/* ===== Table Card (BEM) ===== */
+.request-table {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 18px;
+}
+
+.request-table__table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.request-table__thead {
+    background: #f7f7f7;
+}
+
+.request-table__th,
+.request-table__td {
+    padding: 12px 14px;
+    border-bottom: 1px solid #e6e6e6;
+    text-align: center;
+    font-size: 12px;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.request-table__th {
+    font-weight: 800;
+}
+
+.request-table__detail {
+    font-weight: 800;
+    color: #000;
+}
+
+.request-table__empty {
+    padding: 18px;
+    text-align: center;
+    font-weight: 700;
+    color: #666;
+}
+
+/* ===== Auth Form (BEM) ===== */
+.auth-form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.auth-form__inner {
+    width: 100%;
+    max-width: 520px;
+    padding: 40px 16px 60px;
+    text-align: center;
+}
+
+.auth-form__title {
+    margin: 10px 0 28px;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.auth-form__message {
+    text-align: left;
+    margin: 0 0 16px;
+}
+
+.auth-form__error-list {
+    margin: 0;
+    padding-left: 18px;
+}
+
+.auth-form__error-item {
+    margin: 4px 0;
+}
+
+.auth-form__form {
+    text-align: left;
+}
+
+.auth-form__group {
+    margin-bottom: 18px;
+}
+
+.auth-form__label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 12px;
+    font-weight: 800;
+    color: #111;
+}
+
+.auth-form__input {
+    width: 100%;
+    height: 34px;
+    border: 1px solid #999;
+    border-radius: 2px;
+    padding: 0 10px;
+    background: #fff;
+}
+
+.auth-form__submit {
+    width: 100%;
+    height: 44px;
+    margin-top: 18px;
+    background: #000;
+    color: #fff;
+    border: 0;
+    border-radius: 4px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.auth-form__links {
+    margin-top: 14px;
+}
+
+.auth-form__link {
+    font-size: 12px;
+    color: #2f64ff;
+    font-weight: 700;
+}
+
+/* ===== Staff List (BEM) ===== */
+.staff-list {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.staff-list__inner {
+    width: 100%;
+    max-width: 760px;
+}
+
+/* ===== Staff Table (BEM) ===== */
+.staff-table {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 18px;
+}
+
+.staff-table__table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.staff-table__thead {
+    background: #f7f7f7;
+}
+
+.staff-table__th,
+.staff-table__td {
+    padding: 12px 14px;
+    border-bottom: 1px solid #e6e6e6;
+    text-align: center;
+    font-size: 12px;
+    color: #333;
+    white-space: nowrap;
+}
+
+.staff-table__th {
+    font-weight: 800;
+}
+
+.staff-table__detail {
+    font-weight: 800;
+    color: #000;
+}
+
+.staff-table__empty {
+    padding: 18px;
+    text-align: center;
+    font-weight: 700;
+    color: #666;
+}
+
+/* ===== Staff Attendance (BEM) ===== */
+.staff-attendance {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.staff-attendance__inner {
+    width: 100%;
+    max-width: 760px;
+}
+
+.staff-attendance__actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 18px;
+}
+
+.staff-attendance__csv {
+    width: 140px;
+    height: 42px;
+    border-radius: 4px;
+}
+
+.attendance-detail__time {
+    width: 62px;
+    height: 22px;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background: #fff;
+    text-align: center;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+/* ===== Day Nav (BEM) ===== */
+.day-nav {
+    margin-top: 12px;
+    background: #fff;
+    border-radius: 6px;
+    padding: 10px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.day-nav__link {
+    font-size: 12px;
+    font-weight: 800;
+    color: #333;
+}
+
+.day-nav__center {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 800;
+}
+
+.day-nav__date {
+    font-size: 12px;
+}
+
+.auth-form__error {
+    margin-top: 6px;
+    font-size: 12px;
+    color: #e60023;
+    line-height: 1.2;
+}
